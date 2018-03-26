@@ -1,0 +1,6 @@
+bluemix target "to set target"
+
+
+bluemix cf logs app --recent
+
+bluemix cf push app

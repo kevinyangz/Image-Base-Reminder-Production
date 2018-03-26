@@ -1,0 +1,100 @@
+<!-- include ajax -->
+
+<html>
+<head>
+<link rel="stylesheet" media="screen" href = "{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" media="screen" href = "{{url_for('static',filename='css/cover.css')}}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+
+<!-- form, button and output -->
+<!--
+<input type="text" id="input" name="input" placeholder="Enter sentence"/>
+<button id="btn">Call API</button>
+<div id="api_output"> </div>-->
+
+
+
+  <body>
+
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">ECE496: Image Base Reminder </h3>
+              <nav class="nav nav-masthead">
+                <a class="nav-link active" href="#">Home</a>
+                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">Contact</a>
+              </nav>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="inner cover">
+            <h1 class="cover-heading">No more food waste</h1>
+            <p class="lead">Simply upload your foods and we will take care of the reminder</p>
+        
+            <form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
+            <div class="form-group" >
+               
+            
+              <input type="radio" name="gender" value="male"> Room Temperature
+              <input type="radio" name="gender" value="female"> Fridge
+                <br>
+              <label for="exampleInputFile">Upload your Photo Here</label> 
+            <input type=file multiple="" class="form-control-file" name=files[] aria-describedby="fileHelp">
+            </div>
+
+           <button type="submit" class="btn btn-primary">Predict</button>
+          </form>
+    <div class="container">
+      {% if datas %}
+    {% for data in datas %}
+      <p class="lead">Predict Category is {{ data.category }}  Confidence is {{data.confidence}} </p>
+       <p class="lead">Predcit time: {{data.duration}} seconds </p>
+        <img src={{data.filename}} class="img-responsive" alt="User Image" height="100" width="100">
+    {% endfor %}
+       
+       {% endif %}
+   </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+                    <p>Design by Ze Yang, Zhiwen Cai, JiaQi Tian</p>
+            </div>
+        </div>
+
+        </div>
+
+      </div>
+
+    </div>
+     <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+
+</body>
+   
+
+</html>
+
+
+
+
+

@@ -1,0 +1,13 @@
+Flask
+cf-deployment-tracker
+cloudant
+scipy
+tensorflow
+gunicorn
+flask_cors
+keras
+opencv-python
+Flask-Uploads
+h5py
+pillow
+jsonpickle

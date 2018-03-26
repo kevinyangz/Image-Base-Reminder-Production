@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" media="screen" href = "{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" media="screen" href = "{{url_for('static',filename='css/cover.css')}}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <p align="left"><a href="{{ url_for('home') }}">Home Page</a></p>
+
+   <div class="container " >
+    <h2>Predict Results</h2>
+   
+     {% if datas %}
+    <div class="row">
+    
+    {% for data in datas %}
+    <div class={{grid}}>
+    <p>Result-> {{ data.category }}  Confidence: {{data.confidence}} </p>
+    <p>Freshness Level-> {{data.fresh}} Confidence :{{data.freshcon}}</p>
+    <p>Suggestion: {{data.date}}</p>
+    <p>Predcit time: {{data.duration}} seconds </p>
+    <img src={{data.filename}} class="img-responsive" alt="User Image" height="300" width="300">
+    </div> 
+    {% endfor %}
+   
+    </div>
+       {% endif %}
+  </div>
+</body>
+
+</html>
