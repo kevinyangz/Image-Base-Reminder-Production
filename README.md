@@ -4,6 +4,8 @@
 Install the dependencies listed in the [requirements.txt ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://pip.readthedocs.io/en/stable/user_guide/#requirements-files) file to be able to run the app locally.
 
 You can optionally use a [virtual environment ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://packaging.python.org/installing/#creating-and-using-virtual-environments) to avoid having these dependencies clash with those of other Python projects or your operating system.
+
+Copy  Banana.h5, model.h5, model.json from Google Drive into local directory(same directory with hello.py)
   ```
 pip install -r requirements.txt
   ```
@@ -53,8 +55,15 @@ bluemix cf push
 This can take a minute. If there is an error in the deployment process you can use the command `cf logs <Your-App-Name> --recent` to troubleshoot.
 
 ## 5. Some useful commands
-bluemix target "to set target"
-bluemix cf logs app --recent
-bluemix cf push app
+```
+bluemix target        //"to set target"
+```
+```
+bluemix cf logs app --recent ///see the recent logs
+```
+```
+bluemix cf push app  //deploy the log into IBM cloud
+```
+
 
 
