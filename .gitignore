@@ -1,0 +1,8 @@
+
+*.h5
+*.jpeg
+*.jpg
+static/img/.DS_Store
+static/.DS_Store
+model.json
+tests/.DS_Store
